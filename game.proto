@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package game;
+
+option py_generic_services = true;
+
+message entity_message
+{
+    int32 entityID = 1;
+    string methodName = 2;
+    bytes parm = 3;
+}
+
+message void {
+
+}
+
+
+service GameService
+{
+    rpc entity_method (entity_message) returns (void);
+}
